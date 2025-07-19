@@ -2,5 +2,5 @@
    "packageName": "aind_session_json_service_async_client",
    "projectName": "aind-session-json-service-async-client",
    "library": "asyncio",
-   "packageVersion": "0.1.1"
+   "packageVersion": "0.1.2"
 }
