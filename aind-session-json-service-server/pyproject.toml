@@ -17,7 +17,7 @@ readme = "README.md"
 dynamic = ["version"]
 
 dependencies = [
-    'requests-toolbelt',  # Used for example. Remove if not needed.
+    'aind-metadata-mapper[bergamo]==0.25.0',
     'pydantic>=2.0',
     'pydantic-settings>=2.0',
     'fastapi[standard]>=0.114.0',
@@ -89,6 +89,3 @@ fail-under = 100
 [tool.pytest.ini_options]
 asyncio_mode="auto"
 asyncio_default_fixture_loop_scope="function"
-env = [
-    "MYENV_HOST=example"
-]

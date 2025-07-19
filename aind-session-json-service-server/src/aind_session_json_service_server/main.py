@@ -15,17 +15,17 @@ log_level = os.getenv("LOG_LEVEL", "INFO")
 logging.basicConfig(level=log_level)
 
 description = """
-## aind-service-template
+## aind-session-json-service
 
-Service to pull data from example backend.
+Run metadata mapper to create a session metadata
 
 """
 
 # noinspection PyTypeChecker
 app = FastAPI(
-    title="aind-service-template",
+    title="aind-session-json-service",
     description=description,
-    summary="Serves data from example backend.",
+    summary="Run metadata mapper to create a session metadata",
     version=service_version,
 )
 
