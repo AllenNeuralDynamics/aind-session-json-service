@@ -15,9 +15,9 @@ def load_env_from_toml(toml_path):
         [
             (row.split("=")[0], row.split("=")[1])
             for row in config.get("tool", dict())
-            .get("pytest")
-            .get("ini_options")
-            .get("env")
+            .get("pytest", dict())
+            .get("ini_options", dict())
+            .get("env", [])
         ]
     )
     for key, value in env_vars.items():
