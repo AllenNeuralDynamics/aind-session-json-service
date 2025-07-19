@@ -14,10 +14,10 @@
 
 import unittest
 
-from aind_session_json_service_client.models.fov_coordinate_ml import FovCoordinateMl
+from aind_session_json_service_async_client.models.job_response import JobResponse
 
-class TestFovCoordinateMl(unittest.TestCase):
-    """FovCoordinateMl unit test stubs"""
+class TestJobResponse(unittest.TestCase):
+    """JobResponse unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,24 +25,28 @@ class TestFovCoordinateMl(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FovCoordinateMl:
-        """Test FovCoordinateMl
+    def make_instance(self, include_optional) -> JobResponse:
+        """Test JobResponse
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `FovCoordinateMl`
+        # uncomment below to create an instance of `JobResponse`
         """
-        model = FovCoordinateMl()
+        model = JobResponse()
         if include_optional:
-            return FovCoordinateMl(
+            return JobResponse(
+                status_code = 56,
+                message = '',
+                data = ''
             )
         else:
-            return FovCoordinateMl(
+            return JobResponse(
+                status_code = 56,
         )
         """
 
-    def testFovCoordinateMl(self):
-        """Test FovCoordinateMl"""
+    def testJobResponse(self):
+        """Test JobResponse"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

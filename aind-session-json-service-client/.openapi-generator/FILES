@@ -17,6 +17,7 @@ aind_session_json_service_client/models/fov_coordinate_ml.py
 aind_session_json_service_client/models/health_check.py
 aind_session_json_service_client/models/http_validation_error.py
 aind_session_json_service_client/models/input_source.py
+aind_session_json_service_client/models/job_response.py
 aind_session_json_service_client/models/job_settings.py
 aind_session_json_service_client/models/output_directory.py
 aind_session_json_service_client/models/user_settings_config_file.py
@@ -30,6 +31,7 @@ docs/HTTPValidationError.md
 docs/HealthCheck.md
 docs/HealthcheckApi.md
 docs/InputSource.md
+docs/JobResponse.md
 docs/JobSettings.md
 docs/OutputDirectory.md
 docs/UserSettingsConfigFile.md
@@ -48,6 +50,7 @@ test/test_health_check.py
 test/test_healthcheck_api.py
 test/test_http_validation_error.py
 test/test_input_source.py
+test/test_job_response.py
 test/test_job_settings.py
 test/test_output_directory.py
 test/test_user_settings_config_file.py

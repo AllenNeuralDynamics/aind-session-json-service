@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_session**
-> object get_session(job_settings)
+> JobResponse get_session(job_settings)
 
 Get Session
 
@@ -19,6 +19,7 @@ Get Session
 
 ```python
 import aind_session_json_service_async_client
+from aind_session_json_service_async_client.models.job_response import JobResponse
 from aind_session_json_service_async_client.models.job_settings import JobSettings
 from aind_session_json_service_async_client.rest import ApiException
 from pprint import pprint
@@ -56,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**JobResponse**](JobResponse.md)
 
 ### Authorization
 
