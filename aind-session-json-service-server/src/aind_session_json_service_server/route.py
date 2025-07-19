@@ -1,11 +1,10 @@
 """Module to handle endpoint responses"""
 
-from aind_metadata_mapper.bergamo.session import (
-    BergamoEtl,
-)
+from aind_metadata_mapper.bergamo.session import BergamoEtl
 from aind_metadata_mapper.bergamo.session import (
     JobSettings as BergamoJobSettings,
 )
+from aind_metadata_mapper.core_models import JobResponse
 from fastapi import APIRouter, status
 
 from aind_session_json_service_server.models import HealthCheck
@@ -31,9 +30,7 @@ def get_health() -> HealthCheck:
     return HealthCheck()
 
 
-@router.post(
-    "/bergamo",
-)
+@router.post("/bergamo", response_model=JobResponse)
 def get_session(job_settings: BergamoJobSettings):
     """
     ## Get Session JSON metadata file.
