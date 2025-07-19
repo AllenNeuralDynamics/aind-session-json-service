@@ -1,5 +1,5 @@
 # aind-session-json-service
-REST service to connect to VAST and return session json files.
+REST service to connect to backend and return session json files
 
 ## Usage
 
