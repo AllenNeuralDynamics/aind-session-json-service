@@ -1,11 +1,14 @@
 """Module to handle endpoint responses"""
 
-from fastapi import APIRouter, Depends, HTTPException, Path, status
-from requests_toolbelt.sessions import BaseUrlSession
+from aind_metadata_mapper.bergamo.session import (
+    BergamoEtl,
+)
+from aind_metadata_mapper.bergamo.session import (
+    JobSettings as BergamoJobSettings,
+)
+from fastapi import APIRouter, status
 
-from aind_session_json_service_server.handler import SessionHandler
-from aind_session_json_service_server.models import Content, HealthCheck
-from aind_session_json_service_server.session import get_session
+from aind_session_json_service_server.models import HealthCheck
 
 router = APIRouter()
 
@@ -18,7 +21,7 @@ router = APIRouter()
     status_code=status.HTTP_200_OK,
     response_model=HealthCheck,
 )
-async def get_health() -> HealthCheck:
+def get_health() -> HealthCheck:
     """
     ## Endpoint to perform a healthcheck on.
 
@@ -28,21 +31,16 @@ async def get_health() -> HealthCheck:
     return HealthCheck()
 
 
-@router.get(
-    "/{example_arg}",
-    response_model=Content,
+@router.post(
+    "/bergamo",
 )
-async def get_content(
-    example_arg: str = Path(..., examples=["raw", "length"]),
-    session: BaseUrlSession = Depends(get_session),
-):
+def get_session(job_settings: BergamoJobSettings):
     """
-    ## Example content
-    Return either the raw content or the number of characters.
+    ## Get Session JSON metadata file.
     """
-    content = SessionHandler(session=session).get_info(example_arg=example_arg)
-    # Adding this for illustrative purposes.
-    if len(content.info) == 0:
-        raise HTTPException(status_code=404, detail="Not found")
-    else:
-        return content
+
+    etl_job = BergamoEtl(
+        job_settings=job_settings,
+    )
+    response = etl_job.run_job()
+    return response
