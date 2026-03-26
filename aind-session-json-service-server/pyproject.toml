@@ -36,6 +36,8 @@ dev = [
     'pytest-env',
     'pytest-mock',
     'pytest_asyncio',
+    'python-json-logger',
+    'PyYAML'
 ]
 
 [tool.setuptools.packages.find]
